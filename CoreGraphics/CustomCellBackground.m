@@ -29,6 +29,7 @@
     
     CGColorRef whiteColor = [UIColor whiteColor].CGColor;
     CGColorRef grayColor = [UIColor lightGrayColor].CGColor;
+    CGColorRef separatorColor = [UIColor colorWithRed:208.0/255.0 green:208.0/255.0 blue:208.0/255.0 alpha:1.0].CGColor;
     CGRect paperRect = self.bounds;
     
     drawLinearGradient(context, paperRect, whiteColor, grayColor);
@@ -36,8 +37,15 @@
     CGRect strokeRect = paperRect;
     strokeRect.size.height -= 1;
     strokeRect = rectFor1PxStroke(paperRect);
+    
     CGContextSetStrokeColorWithColor(context, whiteColor);
-    CGContextStrokeRectWithWidth(context, strokeRect, 1.0);
+    CGContextSetLineWidth(context, 1.0);
+    CGContextStrokeRect(context, strokeRect);
+    
+    //Add at bottom
+    CGPoint startPoint = CGPointMake(paperRect.origin.x, paperRect.origin.y + paperRect.size.height - 1);
+    CGPoint endPoint = CGPointMake(paperRect.origin.x + paperRect.size.width - 1, paperRect.origin.y + paperRect.size.height -1);
+    draw1PxStroke(context, startPoint, endPoint, separatorColor);
 }
 
 
