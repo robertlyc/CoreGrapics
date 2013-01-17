@@ -8,6 +8,7 @@
 
 #import "TableViewController.h"
 #import "CustomCellBackground.h"
+#import "CustomHeader.h"
 
 @interface TableViewController ()
 
@@ -73,6 +74,15 @@
     } else {
         return @"Things Already Covered";
     }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CustomHeader *header = [[CustomHeader alloc] init];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50;
 }
 
 - (void)viewDidUnload {

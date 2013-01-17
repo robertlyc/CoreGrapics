@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12F53EB16A78CF300162172 /* CustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E12F53EA16A78CF300162172 /* CustomHeader.m */; };
 		E1FEFF2D16A6A9D5006BF58C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FEFF2C16A6A9D5006BF58C /* UIKit.framework */; };
 		E1FEFF2F16A6A9D5006BF58C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FEFF2E16A6A9D5006BF58C /* Foundation.framework */; };
 		E1FEFF3116A6A9D5006BF58C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FEFF3016A6A9D5006BF58C /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E12F53E916A78CF300162172 /* CustomHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHeader.h; sourceTree = "<group>"; };
+		E12F53EA16A78CF300162172 /* CustomHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHeader.m; sourceTree = "<group>"; };
 		E1FEFF2816A6A9D5006BF58C /* CoreGraphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreGraphics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FEFF2C16A6A9D5006BF58C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1FEFF2E16A6A9D5006BF58C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,8 @@
 				E1FEFF5516A74A9B006BF58C /* CustomCellBackground.m */,
 				E1FEFF6016A75004006BF58C /* Common.h */,
 				E1FEFF6116A75004006BF58C /* Common.m */,
+				E12F53E916A78CF300162172 /* CustomHeader.h */,
+				E12F53EA16A78CF300162172 /* CustomHeader.m */,
 				E1FEFF3316A6A9D5006BF58C /* Supporting Files */,
 			);
 			path = CoreGraphics;
@@ -188,6 +193,7 @@
 				E1FEFF4916A6A9D5006BF58C /* TableViewController.m in Sources */,
 				E1FEFF5616A74A9B006BF58C /* CustomCellBackground.m in Sources */,
 				E1FEFF6216A75004006BF58C /* Common.m in Sources */,
+				E12F53EB16A78CF300162172 /* CustomHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
