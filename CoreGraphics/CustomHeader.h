@@ -10,4 +10,6 @@
 
 @interface CustomHeader : UIView
 
+@property (nonatomic, strong) UILabel *titleLabel;
+
 @end
