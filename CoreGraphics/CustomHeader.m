@@ -9,14 +9,18 @@
 #import "CustomHeader.h"
 #import "Common.h"
 
+@interface CustomHeader ()
+
+@end
+
 @implementation CustomHeader {
-    UIColor *lightColor;
-    UIColor *darkColor;
     CGRect coloredBoxRect;
     CGRect paperRect;
 }
 
 @synthesize titleLabel = _titleLabel;
+@synthesize lightColor = _lightColor;
+@synthesize darkColor = _darkColor;
 
 - (id)init {
     if ((self = [super init])) {
@@ -33,8 +37,8 @@
         self.titleLabel.shadowOffset = CGSizeMake(0, -1);
         [self addSubview:self.titleLabel];
         
-        lightColor = [UIColor colorWithRed:105.0/255.0 green:179.0/255.0 blue:216.0/255.0 alpha:1.0];
-        darkColor = [UIColor colorWithRed:21.0/255.0 green:92.0/255.0 blue:136.0/255.0 alpha:1.0];
+        _lightColor = [UIColor colorWithRed:105.0/255.0 green:179.0/255.0 blue:216.0/255.0 alpha:1.0];
+        _darkColor = [UIColor colorWithRed:21.0/255.0 green:92.0/255.0 blue:136.0/255.0 alpha:1.0];
     }
     return self;
 }
@@ -62,14 +66,20 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGColorRef redColor = [UIColor redColor].CGColor;
-    CGColorRef greenColor = [UIColor greenColor].CGColor;
+    CGColorRef whiteColor = [UIColor whiteColor].CGColor;
+    CGColorRef lightColor = self.lightColor.CGColor;
+    //CGColorRef darkColor = self.darkColor.CGColor;
+    CGColorRef shadowColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.5].CGColor;
     
-    CGContextSetFillColorWithColor(context, redColor);
-    CGContextFillRect(context, coloredBoxRect);
-    
-    CGContextSetFillColorWithColor(context, greenColor);
+    CGContextSetFillColorWithColor(context, whiteColor);
     CGContextFillRect(context, paperRect);
+    
+    CGContextSaveGState(context);
+    CGContextSetShadowWithColor(context, CGSizeMake(0, 2), 3.0, shadowColor);
+    CGContextSetFillColorWithColor(context, lightColor);
+    CGContextFillRect(context, coloredBoxRect);
+    CGContextRestoreGState(context);
+    
 }
 
 
